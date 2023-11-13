@@ -1,7 +1,11 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-
+import {
+  Bars3Icon,
+  ShoppingCartIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import desktop_responsive_logo from "../../assets/bazaar_logo.png";
 const user = {
   name: "Tom Cook",
   email: "tom@example.com",
@@ -29,7 +33,7 @@ export default function Navbar({ children }) {
   return (
     <>
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-black">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -37,8 +41,8 @@ export default function Navbar({ children }) {
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <img
-                        className="h-8 w-8"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                        className="h-12 w-18"
+                        src={desktop_responsive_logo}
                         alt="Your Company"
                       />
                     </div>
@@ -66,11 +70,17 @@ export default function Navbar({ children }) {
                     <div className="ml-4 flex items-center md:ml-6">
                       <button
                         type="button"
-                        className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        className=" relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                       >
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">View notifications</span>
-                        <BellIcon className="h-6 w-6" aria-hidden="true" />
+                        <ShoppingCartIcon
+                          className="h-8 w-8 p-1"
+                          aria-hidden="true"
+                        />
+                        <span className=" absolute top-0 right-0 inline-flex items-center rounded-md bg-green-700 px-1 text-xs font-small text-white ring-1 ring-inset ring-green-600/20">
+                          2
+                        </span>
                       </button>
 
                       {/* Profile dropdown */}
@@ -118,7 +128,7 @@ export default function Navbar({ children }) {
                   </div>
                   <div className="-mr-2 flex md:hidden">
                     {/* Mobile menu button */}
-                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Disclosure.Button className=" relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-0.5" />
                       <span className="sr-only">Open main menu</span>
                       {open ? (
@@ -128,7 +138,7 @@ export default function Navbar({ children }) {
                         />
                       ) : (
                         <Bars3Icon
-                          className="block h-6 w-6"
+                          className=" block h-6 w-6"
                           aria-hidden="true"
                         />
                       )}
@@ -179,7 +189,13 @@ export default function Navbar({ children }) {
                     >
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">View notifications</span>
-                      <BellIcon className="h-6 w-6" aria-hidden="true" />
+                      <ShoppingCartIcon
+                        className="h-6 w-6"
+                        aria-hidden="true"
+                      />
+                      <span className="absolute top-0 right-0 mb-5 font-small inline-flex items-center rounded-md bg-green-700 px-1 text-xs font-medium text-white ring-1 ring-inset ring-green-600/20">
+                        3
+                      </span>
                     </button>
                   </div>
                   <div className="mt-3 space-y-1 px-2">
@@ -200,13 +216,13 @@ export default function Navbar({ children }) {
           )}
         </Disclosure>
 
-        <header className="bg-white shadow">
+        {/* <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
               Dashboard
             </h1>
           </div>
-        </header>
+        </header> */}
         <main>
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
             {children}
