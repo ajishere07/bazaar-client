@@ -6,6 +6,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import desktop_responsive_logo from "../../assets/bazaar_logo.png";
+import { Link } from "react-router-dom";
 const user = {
   name: "Tom Cook",
   email: "tom@example.com",
@@ -68,20 +69,22 @@ export default function Navbar({ children }) {
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                      <button
-                        type="button"
-                        className=" relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                      >
-                        <span className="absolute -inset-1.5" />
-                        <span className="sr-only">View notifications</span>
-                        <ShoppingCartIcon
-                          className="h-8 w-8 p-1"
-                          aria-hidden="true"
-                        />
-                        <span className=" absolute top-0 right-0 inline-flex items-center rounded-md bg-green-700 px-1 text-xs font-small text-white ring-1 ring-inset ring-green-600/20">
-                          2
-                        </span>
-                      </button>
+                      <Link to="/cart">
+                        <button
+                          type="button"
+                          className=" relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        >
+                          <span className="absolute -inset-1.5" />
+                          <span className="sr-only">View notifications</span>
+                          <ShoppingCartIcon
+                            className="h-8 w-8 p-1"
+                            aria-hidden="true"
+                          />
+                          <span className=" absolute top-0 right-0 inline-flex items-center rounded-md bg-green-700 px-1 text-xs font-small text-white ring-1 ring-inset ring-green-600/20">
+                            2
+                          </span>
+                        </button>
+                      </Link>
 
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
@@ -183,20 +186,24 @@ export default function Navbar({ children }) {
                         {user.email}
                       </div>
                     </div>
-                    <button
-                      type="button"
-                      className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                    >
-                      <span className="absolute -inset-1.5" />
-                      <span className="sr-only">View notifications</span>
-                      <ShoppingCartIcon
-                        className="h-6 w-6"
-                        aria-hidden="true"
-                      />
-                      <span className="absolute top-0 right-0 mb-5 font-small inline-flex items-center rounded-md bg-green-700 px-1 text-xs font-medium text-white ring-1 ring-inset ring-green-600/20">
-                        3
-                      </span>
-                    </button>
+                    <Link to="/cart">
+                      <button
+                        type="button"
+                        className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      >
+                        <span className="absolute -inset-1.5" />
+                        <span className="sr-only">View notifications</span>
+
+                        <ShoppingCartIcon
+                          className="h-6 w-6"
+                          aria-hidden="true"
+                        />
+
+                        <span className="absolute top-0 right-0 mb-5 font-small inline-flex items-center rounded-md bg-green-700 px-1 text-xs font-medium text-white ring-1 ring-inset ring-green-600/20">
+                          3
+                        </span>
+                      </button>{" "}
+                    </Link>
                   </div>
                   <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (

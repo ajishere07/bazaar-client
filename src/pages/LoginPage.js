@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import bazaar_logo from "../assets/bazaar_logo_b.png";
 
 function LoginPage() {
@@ -85,12 +86,12 @@ function LoginPage() {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?{" "}
-            <a
-              href="#"
+            <Link
+              to="/signup"
               className="font-semibold leading-6 text-sky-500 hover:text-indigo-500"
             >
               Sign up here
-            </a>
+            </Link>
           </p>
         </div>
       </div>
